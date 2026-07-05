@@ -3,42 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Project - Command Center</title>
+    <title>NEXUS AI - Command Center</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Using a premium looking font -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Navigation -->
+    <!-- SECTION 1: FRONT LANDING PAGE -->
+    <div id="landing-page" class="container">
         <nav class="navbar">
             <div class="logo">NEXUS AI</div>
-            
             <ul class="nav-links">
                 <li><a href="#">PRODUCT <span class="arrow">▼</span></a></li>
                 <li><a href="#">SOLUTIONS <span class="arrow">▼</span></a></li>
                 <li><a href="#">LEARN <span class="arrow">▼</span></a></li>
             </ul>
-
             <div class="nav-actions">
                 <a href="#" class="login-link">SIGN IN</a>
                 <a href="#" class="contact-btn">[ GET IN TOUCH ]</a>
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <header class="hero">
             <h1 class="headline">YOUR TEAM'S COMMAND<br>CENTER FOR TASKS &<br>PRODUCTIVITY.</h1>
-            
-            <!-- The Center Graphic Area (Simulating the 3D wave from the video) -->
             <div class="visual-container">
                 <div class="animated-wave"></div>
             </div>
-
             <p class="sub-headline">An assembly line pipeline that helps you<br>start your workflow today.</p>
-            
-            <button class="cta-button">GET STARTED</button>
+            <button id="get-started-btn" class="cta-button">GET STARTED</button>
         </header>
     </div>
+
+    <!-- SECTION 2: AI INTERFACE DASHBOARD (HIDDEN BY DEFAULT) -->
+    <div id="ai-dashboard" class="app-container hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Neural Interface</h2>
+            </div>
+            <button class="new-chat-btn">+ New Session</button>
+            <div class="history">
+                <p>Previous Session 1</p>
+                <p>Image Recognition Test</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h3>AI Assistant v1.0</h3>
+            </header>
+            
+            <div class="chat-display" id="chat-display">
+                <div class="message ai-message">
+                    <div class="avatar">AI</div>
+                    <div class="text">System initialized. Welcome to your neural command center. How can I help you build today?</div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-box">
+                    <input type="text" id="user-input" placeholder="Message the AI..." autocomplete="off">
+                    <button id="send-btn">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+                <p class="disclaimer">AI can make mistakes. Verify important information.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
