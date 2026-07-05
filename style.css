@@ -1,4 +1,6 @@
-/* GLOBAL RESET */
+/* ==========================================
+   GLOBAL & DESKTOP STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,45 +8,28 @@
 }
 
 body {
-    background-color: #EAEBEF; /* Landing page default background */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #EAEBEF; 
+    transition: background-color 0.3s ease; 
 }
 
-/* UTILITY CLASS TO HIDE THINGS */
 .hidden {
     display: none !important;
 }
 
-/* ==========================================
-   LANDING PAGE STYLES
-   ========================================== */
 .landing-wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Manrope', sans-serif;
-    color: #1A1A1A;
+    min-height: 100vh; display: flex; justify-content: center;
+    align-items: center; font-family: 'Manrope', sans-serif; color: #1A1A1A;
 }
 
 .container {
-    width: 95vw;
-    height: 95vh;
-    background-color: #F4F4F6;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #D1D1D5;
+    width: 95vw; height: 95vh; background-color: #F4F4F6;
+    border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; display: flex; flex-direction: column; border: 1px solid #D1D1D5;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    border-bottom: 1px solid #E0E0E0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 3rem; border-bottom: 1px solid #E0E0E0;
 }
 
 .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; }
@@ -58,9 +43,8 @@ body {
 .contact-btn { text-decoration: none; color: #1A1A1A; font-weight: 800; font-size: 0.85rem; }
 
 .hero {
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center; position: relative; padding: 2rem;
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; position: relative; padding: 2rem;
 }
 
 .headline {
@@ -85,114 +69,92 @@ body {
 .sub-headline { font-size: 0.9rem; color: #777; margin-bottom: 1.5rem; font-weight: 600; z-index: 2; }
 
 .cta-button {
-    background-color: #B265B6; color: white; border: none;
-    padding: 12px 30px; border-radius: 30px; font-size: 0.9rem;
-    font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(178, 101, 182, 0.4);
-    transition: transform 0.2s, box-shadow 0.2s; z-index: 2;
+    background-color: #B265B6; color: white; border: none; padding: 12px 30px;
+    border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    box-shadow: 0 4px 15px rgba(178, 101, 182, 0.4); transition: transform 0.2s, box-shadow 0.2s; z-index: 2;
 }
 .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(178, 101, 182, 0.6); }
 
-/* ==========================================
-   AI DASHBOARD STYLES (DARK MODE)
-   ========================================== */
-.app-container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    color: #ECECF1;
-    font-family: 'Inter', sans-serif;
-}
-
-.sidebar {
-    width: 260px; background-color: #202123; padding: 1rem;
-    display: flex; flex-direction: column; border-right: 1px solid #4D4D4F;
-}
-
+/* --- AI DASHBOARD STYLES --- */
+.app-container { display: flex; width: 100vw; height: 100vh; color: #ECECF1; font-family: 'Inter', sans-serif; }
+.sidebar { width: 260px; background-color: #202123; padding: 1rem; display: flex; flex-direction: column; border-right: 1px solid #4D4D4F; }
 .sidebar-header h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: #fff; }
-
-.new-chat-btn {
-    background-color: transparent; border: 1px solid #565869; color: #fff;
-    padding: 12px; border-radius: 6px; cursor: pointer; font-size: 1rem;
-    transition: background 0.2s; text-align: left; margin-bottom: 1.5rem;
-}
-.new-chat-btn:hover { background-color: #2A2B32; }
-
+.new-chat-btn { background-color: transparent; border: 1px solid #565869; color: #fff; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 1rem; text-align: left; margin-bottom: 1.5rem; }
 .history p { font-size: 0.9rem; color: #C5C5D2; padding: 10px; cursor: pointer; border-radius: 6px; }
-.history p:hover { background-color: #2A2B32; }
-
-.main-content {
-    flex: 1; display: flex; flex-direction: column;
-    position: relative; background-color: #343541;
-}
-
+.main-content { flex: 1; display: flex; flex-direction: column; position: relative; background-color: #343541; }
 .top-bar { padding: 1rem 2rem; background-color: #343541; border-bottom: 1px solid #4D4D4F; text-align: center; }
-
 .chat-display { flex: 1; overflow-y: auto; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
-
 .message { display: flex; gap: 1rem; max-width: 800px; margin: 0 auto; width: 100%; }
 .avatar { width: 30px; height: 30px; background-color: #10A37F; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: white; }
 .user-message .avatar { background-color: #5436DA; }
 .text { line-height: 1.6; font-size: 1rem; color: #ECECF1; text-align: left; }
-
 .input-area { padding: 2rem; background: linear-gradient(180deg, rgba(53,55,64,0) 0%, #353740 50%); }
 .input-box { max-width: 800px; margin: 0 auto; display: flex; background-color: #40414F; border-radius: 8px; padding: 10px 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
 .input-box input { flex: 1; background: transparent; border: none; color: #fff; font-size: 1rem; outline: none; }
-.input-box button { background: transparent; border: none; color: #8E8EA0; cursor: pointer; padding: 5px; transition: color 0.2s; }
-.input-box button:hover { color: #10A37F; }
-.disclaimer { text-align: center; font-size: 0.75rem; color: #C5C5D2; margin-top: 10px; }
+.input-box button { background: transparent; border: none; color: #8E8EA0; cursor: pointer; padding: 5px; }
+
 /* ==========================================
-   RESPONSIVE MOBILE STYLES (FOR PHONES)
+   MOBILE FIXES (CRITICAL FOR PHONES)
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Landing Page Mobile Tweaks */
+    /* 1. Fix the Landing Page */
     .container {
         width: 100vw;
         height: 100vh;
-        border-radius: 0; /* Remove borders on small screens */
+        border-radius: 0;
         border: none;
     }
 
     .navbar {
+        padding: 1.5rem 1rem;
+        justify-content: center; /* Center the logo */
+    }
+
+    /* Force hide the overlapping menu items */
+    .nav-links, .nav-actions {
+        display: none !important; 
+    }
+
+    .hero {
         padding: 1rem;
     }
 
-    .nav-links {
-        display: none; /* Hide desktop links on mobile for simplicity */
-    }
-
+    /* Shrink the massive headline text */
     .headline {
-        font-size: 1.8rem; /* Shrink text so it fits mobile screens */
+        font-size: 2.2rem !important; 
+        padding: 0 10px;
     }
 
     .visual-container {
-        height: 150px;
+        height: 180px;
+        margin: 10px 0;
     }
 
     .animated-wave {
-        width: 90%;
-        height: 60px;
+        width: 95%;
+        height: 80px;
     }
 
-    /* 2. AI Dashboard Mobile Tweaks */
+    .sub-headline {
+        font-size: 0.85rem;
+        padding: 0 15px;
+    }
+
+    /* 2. Fix the Dashboard */
     .app-container {
-        flex-direction: column; /* Stack sidebar on top of chat */
+        flex-direction: column;
     }
-
+    
     .sidebar {
         width: 100%;
         height: auto;
-        padding: 0.8rem;
+        padding: 1rem;
         border-right: none;
         border-bottom: 1px solid #4D4D4F;
     }
 
-    .sidebar-header h2 {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-    }
-
     .new-chat-btn, .history {
-        display: none; /* Hide history on mobile to save space for chat */
+        display: none !important; /* Hide to save screen space */
     }
 
     .chat-display {
@@ -204,6 +166,6 @@ body {
     }
     
     .text {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
