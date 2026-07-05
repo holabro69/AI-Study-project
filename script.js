@@ -54,22 +54,58 @@ document.addEventListener('DOMContentLoaded', () => {
         addMessage(text, 'user');
         userInput.value = ''; // Clear the input box
 
-        // ---------------------------------------------------------
-        // 🚨 EDIT HERE: FUTURE AI BACKEND INTEGRATION 🚨
-        // Right now, this just simulates an AI replying after 1 second.
-        // Later, we will delete this setTimeout and replace it with:
-        // await fetch('your-backend-api-url', { method: 'POST', body: text })
-        // ---------------------------------------------------------
+        // ---------------------------------------------------------document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Logic
+    const getStartedBtn = document.getElementById('get-started-btn');
+    const landingPage = document.getElementById('landing-page');
+    const aiDashboard = document.getElementById('ai-dashboard');
+    const mainBody = document.getElementById('main-body');
+    
+    if (getStartedBtn) {
+        getStartedBtn.addEventListener('click', () => {
+            landingPage.classList.add('hidden');
+            aiDashboard.classList.remove('hidden');
+            mainBody.style.backgroundColor = '#343541'; 
+        });
+    }
+
+    // AI Chat Logic
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const chatDisplay = document.getElementById('chat-display');
+
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'ai-message');
+
+        const avatarDiv = document.createElement('div');
+        avatarDiv.classList.add('avatar');
+        avatarDiv.textContent = sender === 'user' ? 'U' : 'AI';
+
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text');
+        textDiv.textContent = text;
+
+        messageDiv.appendChild(avatarDiv);
+        messageDiv.appendChild(textDiv);
+        chatDisplay.appendChild(messageDiv);
+        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+    }
+
+    function handleSend() {
+        const text = userInput.value.trim();
+        if (text === '') return;
+
+        addMessage(text, 'user');
+        userInput.value = '';
+
         setTimeout(() => {
             addMessage("Backend not connected yet! Once we build the AI model, I will process: '" + text + "'", 'ai');
         }, 1000);
     }
 
-    // Listen for mouse click on Send button
     if (sendBtn && userInput) {
         sendBtn.addEventListener('click', handleSend);
-        
-        // Listen for Enter key on keyboard
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') handleSend();
         });
