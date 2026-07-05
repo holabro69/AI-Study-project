@@ -4,36 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEXUS AI - Command Center</title>
+    <!-- This fixes the Unity logo issue by forcing a robot emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- SECTION 1: FRONT LANDING PAGE -->
-    <div id="landing-page" class="container">
-        <nav class="navbar">
-            <div class="logo">NEXUS AI</div>
-            <ul class="nav-links">
-                <li><a href="#">PRODUCT <span class="arrow">▼</span></a></li>
-                <li><a href="#">SOLUTIONS <span class="arrow">▼</span></a></li>
-                <li><a href="#">LEARN <span class="arrow">▼</span></a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="#" class="login-link">SIGN IN</a>
-                <a href="#" class="contact-btn">[ GET IN TOUCH ]</a>
-            </div>
-        </nav>
+<body id="main-body">
 
-        <header class="hero">
-            <h1 class="headline">YOUR TEAM'S COMMAND<br>CENTER FOR TASKS &<br>PRODUCTIVITY.</h1>
-            <div class="visual-container">
-                <div class="animated-wave"></div>
-            </div>
-            <p class="sub-headline">An assembly line pipeline that helps you<br>start your workflow today.</p>
-            <button id="get-started-btn" class="cta-button">GET STARTED</button>
-        </header>
+    <!-- ==========================================
+         SECTION 1: LANDING PAGE (VISIBLE FIRST)
+         ========================================== -->
+    <div id="landing-page" class="landing-wrapper">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">NEXUS AI</div>
+                <ul class="nav-links">
+                    <li><a href="#">PRODUCT <span class="arrow">▼</span></a></li>
+                    <li><a href="#">SOLUTIONS <span class="arrow">▼</span></a></li>
+                    <li><a href="#">LEARN <span class="arrow">▼</span></a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="login-link">SIGN IN</a>
+                    <a href="#" class="contact-btn">[ GET IN TOUCH ]</a>
+                </div>
+            </nav>
+
+            <header class="hero">
+                <h1 class="headline">YOUR TEAM'S COMMAND<br>CENTER FOR TASKS &<br>PRODUCTIVITY.</h1>
+                <div class="visual-container">
+                    <div class="animated-wave"></div>
+                </div>
+                <p class="sub-headline">An assembly line pipeline that helps you<br>start your workflow today.</p>
+                <button id="get-started-btn" class="cta-button">GET STARTED</button>
+            </header>
+        </div>
     </div>
 
-    <!-- SECTION 2: AI INTERFACE DASHBOARD (HIDDEN BY DEFAULT) -->
+    <!-- ==========================================
+         SECTION 2: AI DASHBOARD (HIDDEN AT START)
+         ========================================== -->
     <div id="ai-dashboard" class="app-container hidden">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -54,7 +63,7 @@
             <div class="chat-display" id="chat-display">
                 <div class="message ai-message">
                     <div class="avatar">AI</div>
-                    <div class="text">System initialized. Welcome to your neural command center. How can I help you build today?</div>
+                    <div class="text">System initialized. Welcome to your command center. How can I assist you today?</div>
                 </div>
             </div>
 
@@ -71,7 +80,5 @@
     </div>
 
     <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
