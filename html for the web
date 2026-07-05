@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project - Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a premium looking font -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation -->
+        <nav class="navbar">
+            <div class="logo">NEXUS AI</div>
+            
+            <ul class="nav-links">
+                <li><a href="#">PRODUCT <span class="arrow">▼</span></a></li>
+                <li><a href="#">SOLUTIONS <span class="arrow">▼</span></a></li>
+                <li><a href="#">LEARN <span class="arrow">▼</span></a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="login-link">SIGN IN</a>
+                <a href="#" class="contact-btn">[ GET IN TOUCH ]</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1 class="headline">YOUR TEAM'S COMMAND<br>CENTER FOR TASKS &<br>PRODUCTIVITY.</h1>
+            
+            <!-- The Center Graphic Area (Simulating the 3D wave from the video) -->
+            <div class="visual-container">
+                <div class="animated-wave"></div>
+            </div>
+
+            <p class="sub-headline">An assembly line pipeline that helps you<br>start your workflow today.</p>
+            
+            <button class="cta-button">GET STARTED</button>
+        </header>
+    </div>
+</body>
+</html>
