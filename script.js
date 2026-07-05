@@ -1,75 +1,24 @@
+// Adding a console log so you can verify the script loaded properly in DevTools
+console.log("Nexus AI Script Initialized");
+
 document.addEventListener('DOMContentLoaded', () => {
-    // ---------------------------------------------------------
-    // 1. PAGE NAVIGATION LOGIC
-    // ---------------------------------------------------------
+    // 1. Navigation Logic
     const getStartedBtn = document.getElementById('get-started-btn');
     const landingPage = document.getElementById('landing-page');
     const aiDashboard = document.getElementById('ai-dashboard');
     const mainBody = document.getElementById('main-body');
     
-    // When "GET STARTED" is clicked, hide landing page and show dashboard
-    if (getStartedBtn) {
-        getStartedBtn.addEventListener('click', () => {
-            landingPage.classList.add('hidden');
-            aiDashboard.classList.remove('hidden');
-            // Change body color to match the dark dashboard
-            mainBody.style.backgroundColor = '#343541'; 
-        });
-    }
-
-    // ---------------------------------------------------------
-    // 2. AI CHAT LOGIC (READY FOR BACKEND INTEGRATION)
-    // ---------------------------------------------------------
-    const sendBtn = document.getElementById('send-btn');
-    const userInput = document.getElementById('user-input');
-    const chatDisplay = document.getElementById('chat-display');
-
-    // Helper function to draw message bubbles on the screen
-    function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'ai-message');
-
-        const avatarDiv = document.createElement('div');
-        avatarDiv.classList.add('avatar');
-        avatarDiv.textContent = sender === 'user' ? 'U' : 'AI';
-
-        const textDiv = document.createElement('div');
-        textDiv.classList.add('text');
-        textDiv.textContent = text;
-
-        messageDiv.appendChild(avatarDiv);
-        messageDiv.appendChild(textDiv);
-        chatDisplay.appendChild(messageDiv);
-
-        // Auto-scroll to the newest message
-        chatDisplay.scrollTop = chatDisplay.scrollHeight;
-    }
-
-    // Handles what happens when you press Send or hit Enter
-    function handleSend() {
-        const text = userInput.value.trim();
-        if (text === '') return;
-
-        // 1. Display the User's message
-        addMessage(text, 'user');
-        userInput.value = ''; // Clear the input box
-
-        // ---------------------------------------------------------document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Logic
-    const getStartedBtn = document.getElementById('get-started-btn');
-    const landingPage = document.getElementById('landing-page');
-    const aiDashboard = document.getElementById('ai-dashboard');
-    const mainBody = document.getElementById('main-body');
-    
-    if (getStartedBtn) {
+    if (getStartedBtn && landingPage && aiDashboard) {
         getStartedBtn.addEventListener('click', () => {
             landingPage.classList.add('hidden');
             aiDashboard.classList.remove('hidden');
             mainBody.style.backgroundColor = '#343541'; 
         });
+    } else {
+        console.error("Navigation elements not found! Check your HTML IDs.");
     }
 
-    // AI Chat Logic
+    // 2. AI Chat Logic
     const sendBtn = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
     const chatDisplay = document.getElementById('chat-display');
@@ -88,11 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         messageDiv.appendChild(avatarDiv);
         messageDiv.appendChild(textDiv);
-        chatDisplay.appendChild(messageDiv);
-        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        
+        if (chatDisplay) {
+            chatDisplay.appendChild(messageDiv);
+            chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        }
     }
 
     function handleSend() {
+        if (!userInput) return;
         const text = userInput.value.trim();
         if (text === '') return;
 
@@ -107,7 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sendBtn && userInput) {
         sendBtn.addEventListener('click', handleSend);
         userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Prevents accidental page reloads on mobile
+                handleSend();
+            }
         });
     }
 });
