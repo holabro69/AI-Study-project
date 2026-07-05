@@ -140,3 +140,70 @@ body {
 .input-box button { background: transparent; border: none; color: #8E8EA0; cursor: pointer; padding: 5px; transition: color 0.2s; }
 .input-box button:hover { color: #10A37F; }
 .disclaimer { text-align: center; font-size: 0.75rem; color: #C5C5D2; margin-top: 10px; }
+/* ==========================================
+   RESPONSIVE MOBILE STYLES (FOR PHONES)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Landing Page Mobile Tweaks */
+    .container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0; /* Remove borders on small screens */
+        border: none;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide desktop links on mobile for simplicity */
+    }
+
+    .headline {
+        font-size: 1.8rem; /* Shrink text so it fits mobile screens */
+    }
+
+    .visual-container {
+        height: 150px;
+    }
+
+    .animated-wave {
+        width: 90%;
+        height: 60px;
+    }
+
+    /* 2. AI Dashboard Mobile Tweaks */
+    .app-container {
+        flex-direction: column; /* Stack sidebar on top of chat */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 0.8rem;
+        border-right: none;
+        border-bottom: 1px solid #4D4D4F;
+    }
+
+    .sidebar-header h2 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .new-chat-btn, .history {
+        display: none; /* Hide history on mobile to save space for chat */
+    }
+
+    .chat-display {
+        padding: 1rem;
+    }
+
+    .input-area {
+        padding: 1rem;
+    }
+    
+    .text {
+        font-size: 0.9rem;
+    }
+}
